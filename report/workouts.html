@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <title>Workouts</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin="anonymous" />
+    </head>
+    <body class="sb-nav-fixed">
+        <div id="layoutSidenav">
+            <div id="mf-navbar"></div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Workouts</h1>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-10">
+                                        Workouts Records Info
+                                    </div>
+                                    <div class="col-2">
+                                        <a class="btn btn-sm btn-primary" id="downloadMap" href="../map.kml" download="map.kml"> <i class="fa fa-download"></i> Download Map</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="map-style" id="map"></div>
+                        <div class="mt-5 mb-5" id="emptyMap">No entries / GPS coordinates found to display the map</div>
+                        <div class="ml-5">
+                            <i class="fas fa-info-circle ml-5"></i>
+                            <small>The coordinates shown do not correspond exactly to the coordinates stored in the database. These coordinates result from an approximation calculation due to the relative coordinates stored in the database.</small>
+                        </div>
+                        <div class="row">
+                            <div<div class="col-lg-12">
+                                <div class="card mb-12">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Workout Records
+                                    </div>
+                                    <div class="card-body">
+                                        <table id="workout-datatable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Type</th>
+                                                    <th>Start</th>
+                                                    <th>End</th>
+                                                    <th>Distance</th>
+                                                    <th>Calories</th>
+                                                    <th>Steps</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Type</th>
+                                                    <th>Start</th>
+                                                    <th>End</th>
+                                                    <th>Distance</th>
+                                                    <th>Calories</th>
+                                                    <th>Steps</th>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody id="workout-records"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion accordion-flush mt-2" id="accordionFlushExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                  See Coordinates
+                                </button>
+                              </h2>
+                              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <table id="coordinate-datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>Latitude</th>
+                                                <th>Longitude</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Latitude</th>
+                                                <th>Longitude</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody id="coordinate-records"></tbody>
+                                    </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+        <script src="js/report.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/navbar.js"></script>
+        <script src="js/workouts.js"></script>
+    </body>
+</html>
